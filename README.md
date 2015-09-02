@@ -85,7 +85,7 @@ The original codes are included in namespace "std::experimental", but adding any
 - Some codes for C++11  
 Using features of C++14, the original codes do not work under C++11. This implementation works under C++11 (and, of course, under C++14 or later).
 
-- Workaround for GCC
+- Workaround for GCC  
 Because of the [bug](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=52869) of GCC, the original codes cause compilation error with GCC. This implementation contains the workaround about the bug and works fine with GCC.
 
 - Test codes  
