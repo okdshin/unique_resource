@@ -5,6 +5,7 @@
 // This implementation is based on C++ standards committee paper N4189.
 #ifndef UNIQUE_RESOURCE_H_
 #define UNIQUE_RESOURCE_H_
+#include <utility>
 // workaround for GCC
 #if defined(__GNUC__)
 #ifdef UNIQUE_RESOURCE_ALLOW_DELETER_CALL_THROWING_EXCEPTION
