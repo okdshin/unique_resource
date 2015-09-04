@@ -1,4 +1,4 @@
-unique\_resource, The General RAII Wrapper using Exclusive Ownership.
+unique\_resource, The General RAII Wrapper for Exclusive Ownership Resource Management.
 ===
 
 This is an unique\_resource implementation with Boost Software License 1.0.  
