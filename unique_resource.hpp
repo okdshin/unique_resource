@@ -31,10 +31,10 @@ template <typename R, typename D> class unique_resource {
   unique_resource(unique_resource const &) = delete; // no copies!
 public:
   // construction
-  explicit unique_resource(R &&resource, D &&deleter,
+  explicit unique_resource(R &&resource_, D &&deleter_,
                            bool shouldrun = true) noexcept
-      : resource(std::move(resource)),
-        deleter(std::move(deleter)),
+      : resource(std::move(resource_)),
+        deleter(std::move(deleter_)),
         execute_on_destruction{shouldrun} {}
   // move
   unique_resource(unique_resource &&other) noexcept

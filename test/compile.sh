@@ -1,1 +1,1 @@
-c++ -std=c++14 test.cpp -o test.out
+c++ -std=c++14 -Wshadow test.cpp -o test.out
