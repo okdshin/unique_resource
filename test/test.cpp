@@ -29,7 +29,7 @@ void test_semantics_reset_move() {
   {
     auto cleanup = std_experimental::make_unique_resource(
         std::make_unique<int>(42),
-        [&out](auto const& i) { out << "cleaned "; });
+        [&out](auto const&) { out << "cleaned "; });
     cleanup.reset(nullptr);
   }
   assert("cleaned cleaned " == out.str());
@@ -95,7 +95,7 @@ void test_unique_resource_can_be_moved() {
   }
   assert("cleaned 42" == out.str());
 }
-void thrower(int i) noexcept(false) { throw 42; }
+void thrower(int) noexcept(false) { throw 42; }
 void test_noexcept_deleter() {
   //auto cleanup = std_experimental::make_unique_resource(42, &thrower);
   //will terminate if run....
