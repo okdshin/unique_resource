@@ -1,5 +1,6 @@
 // unique_resource
 // Copyright (c) 2015 okdshin
+// Portions Copyright (c) 2020 D3 Engineering, LLC.
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
 // file LICENSE.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 // This implementation is based on C++ standards committee paper N4189.
@@ -23,6 +24,15 @@
   noexcept(noexcept(this->get_deleter()(resource)))
 #endif
 namespace std_experimental {
+
+// By Herb Sutter, <https://herbsutter.com/gotw/_102/>.
+// Copied here since C++11 doesn't have std::make_unique().
+template<typename T, typename ...Args>
+std::unique_ptr<T> make_unique( Args&& ...args )
+{
+    return std::unique_ptr<T>( new T( std::forward<Args>(args)... ) );
+}
+
 template <typename R, typename D> class unique_resource {
   R resource;
   D deleter;
